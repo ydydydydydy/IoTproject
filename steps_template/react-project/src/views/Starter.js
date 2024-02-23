@@ -1,5 +1,5 @@
 import { Col, Row } from "reactstrap";
-import SalesChart from "../components/SalesChart.js";
+import WalkingChart from "../components/WalkingChart.js";
 import Feeds from "../components/Feeds.js";
 import ProjectTables from "../components/ProjectTable.js";
 
@@ -52,7 +52,7 @@ const Starter = () => {
       {/***Sales & Feed***/}
       <Row>
         <Col sm="6" lg="6" xl="7" xxl="8">
-          <SalesChart />
+          <WalkingChart />
         </Col>
         <Col sm="6" lg="6" xl="5" xxl="4">
           <Feeds />

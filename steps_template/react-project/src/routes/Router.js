@@ -40,7 +40,7 @@ const ThemeRoutes = [
       { path: "/mypage", exact: true, element: <MyPage /> },
       { path: "/delete", exact: true, element: <Delete /> },
       { path: "/survey", exact: true, element: <Survey /> },
-      { path: "/Result", exact: true, element: <Result /> },
+      { path: "/result", exact: true, element: <Result /> },
 
       // { path: "/about", exact: true, element: <About /> },
       // { path: "/alerts", exact: true, element: <Alerts /> },

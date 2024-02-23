@@ -1,34 +1,30 @@
-import {useCallback, useEffect, useState} from "react";
-import {query} from "express";
+import React, { useState } from 'react';
+import YouTube from 'react-youtube';
 
-const PostureCorrectionVideo = ({youtube}) => {
+const PostureCorrectionVideo = () => {
+    // 특정 YouTube 동영상 ID를 설정
+    const defaultVideoId = 'wFvZ7fW9190';
+    const [videoId, setVideoId] = useState(defaultVideoId);
 
-    const [videos, setVideos] = useState([]);
-    const [selectedVideo, setSelectedVideo] = useState(null);
+    // 영상 ID를 변경하는 함수
+    const handleInputChange = (event) => {
+        setVideoId(event.target.value);
+    };
 
-    const selectedVideo = (video) => {
-      setSelectedVideo(video);
-    }
-
-    const search = useCallback(
-        (query) => {
-            setSelectedVideo(null);
-            youtube
-                .search(query)
-                .then((videos)=>setVideos(videos));
-        },[youtube],
-    );
-    useEffect(() => {
-        youtube
-            .mostPopular()
-            .then((videos)=>setVideos(videos));
-    }, [youtube]);
+    const opts = {
+        height: '390',
+        width: '640',
+        playerVars: {
+            autoplay: 1,
+        },
+    };
 
     return (
         <div>
-            
+            {/* YouTube 컴포넌트에 고정된 동영상 ID 전달 */}
+            <YouTube videoId={videoId} opts={opts} />
         </div>
-    )
-}
+    );
+};
 
-export default PostureCorrectionVideo
+export default PostureCorrectionVideo;

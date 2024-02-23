@@ -1,6 +1,6 @@
 import { Button, Nav, NavItem } from "reactstrap";
 import { Link, useLocation } from "react-router-dom";
-
+import "../images/scss/layout/_sidebar.scss"
 const navigation = [
   {
     title: "Main",
@@ -8,20 +8,15 @@ const navigation = [
     icon: "bi bi-speedometer2",
   },
   {
-    title: "Survey",
-    href: "/Survey",
+    title: "Mypage",
+    href: "/mypage",
     icon: "bi bi-bell",
   },
-  // {
-  //   title: "Badges",
-  //   href: "/badges",
-  //   icon: "bi bi-patch-check",
-  // },
-  // {
-  //   title: "Buttons",
-  //   href: "/buttons",
-  //   icon: "bi bi-hdd-stack",
-  // },
+  {
+    title: "Survey",
+    href: "/survey",
+    icon: "bi bi-patch-check",
+  },
   // {
   //   title: "Cards",
   //   href: "/cards",
@@ -71,7 +66,7 @@ const Sidebar = () => {
           <i className="bi bi-x"></i>
         </Button>
       </div>
-      <div className="p-3 mt-2">
+      <div className="p-3 mt-2" >
         <Nav vertical className="sidebarNav">
           {navigation.map((navi, index) => (
             <NavItem key={index} className="sidenav-bg">
@@ -88,15 +83,14 @@ const Sidebar = () => {
               </Link>
             </NavItem>
           ))}
-          <Button
-            color="danger"
-            tag="a"
-            target="_blank"
-            className="mt-3"
-            href="/Result"
-          >
-            Result
-          </Button>
+<Link
+  to="/result"
+  className="btn btn-danger mt-3"
+>
+  Result
+</Link>
+
+
         </Nav>
       </div>
     </div>

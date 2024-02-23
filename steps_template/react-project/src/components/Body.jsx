@@ -1,8 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-
-import Header from "./Header";
 import {Route, Routes} from "react-router-dom";
+import Header from "./Header";
 import Main from "./Main";
 import Join from "./Join";
 import Login from "./Login";

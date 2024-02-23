@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import { Container } from "reactstrap";
-
+// import Body from "../components/Body";
 const FullLayout = () => {
   return (
     <main>
@@ -12,6 +12,7 @@ const FullLayout = () => {
         {/********Sidebar**********/}
         <aside className="sidebarArea shadow" id="sidebarArea">
           <Sidebar />
+          {/* <Body /> */}
         </aside>
         {/********Content Area**********/}
         <div className="contentArea">
