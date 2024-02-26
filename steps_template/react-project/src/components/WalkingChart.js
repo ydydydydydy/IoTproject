@@ -1,7 +1,24 @@
 import { Card, CardBody, CardSubtitle, CardTitle, Row, Col } from "reactstrap";
 import Chart from "react-apexcharts";
+import { useEffect, useState } from "react";
+import axios from "../axios";
 
 const WalkingChart = () => {
+
+  let user = JSON.parse(sessionStorage.getItem('user') || null);
+
+  const [members, setMembers] = useState([]);
+
+  /* 회원 검색을 요청하는 useEffect 구현 */
+  useEffect(() => {
+    axios
+        .post('/user/result', {id:user.id})
+        .then((res)=>{
+          setMembers(res.data.walkingData[0]);
+
+        });
+  }, []);
+
   const options = {
     chart: {
       toolbar: {
@@ -76,16 +93,16 @@ const WalkingChart = () => {
         <div className="bg-primary text-white my-3 p-3 rounded">
           <Row>
             <Col md="4">
-              <h6>Total Sales</h6>
-              <h4 className="mb-0 fw-bold">$10,345</h4>
+              <h6>걸음수</h6>
+              <h4 className="mb-0 fw-bold">{members.steps}</h4>
             </Col>
             <Col md="4">
-              <h6>This Month</h6>
-              <h4 className="mb-0 fw-bold">$7,545</h4>
+              <h6>거리</h6>
+              <h4 className="mb-0 fw-bold">{members.distance}</h4>
             </Col>
             <Col md="4">
-              <h6>This Week</h6>
-              <h4 className="mb-0 fw-bold">$1,345</h4>
+              <h6>신체 균형</h6>
+              <h4 className="mb-0 fw-bold">{members.angle}</h4>
             </Col>
           </Row>
         </div>

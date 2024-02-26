@@ -82,8 +82,8 @@ const Login = () => {
         </Form.Group>
 
 
-        <div className='d-grid gap mb-3'>
-          <Button variant="info" type="submit">
+        <div className='d-grid gap mb-3' style={{ justifyContent: 'center' }}>
+          <Button variant="info" type="submit" style={{ border: 'none', marginTop: '25px', width: '100px', backgroundColor: 'lightgreen'}}>
             Submit
           </Button>
         </div>

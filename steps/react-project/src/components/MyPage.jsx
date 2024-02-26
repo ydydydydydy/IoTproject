@@ -85,115 +85,107 @@ const MyPage = () => {
                     alert('회원정보 변경 완료!');
 
                     navigate('/main');
-                }
-            })
-    }
-    return (
-        <div className="main-body">
-            {/* 로그인된 상태인지 판별
-        - 로그인 상태: 회원정보 출력
-        - 비로그인 상태: '로그인 후 이용가능합니다.' 출력
-      */}
-            {user?
-                (<div>
-                        <h1>마이페이지</h1>
-                        <div align="center">
-                            <Table striped="columns">
-                                <tbody align="center">
-                                <tr>
-                                    <td>ID</td>
-                                    <td>{user.id}</td>
-                                </tr>
-                                <tr>
-                                    <td>비밀번호</td>
-                                    <td>
-                                        <div className="d-grid gap-2">
-                                            <Button
-                                                variant="light"
-                                                size="sm"
-                                                onClick={handleShow}
-                                            >
-                                                비밀번호 변경
-                                            </Button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>이름</td>
-                                    <td>
-                                        <Form.Control
-                                            type="text"
-                                            size="sm"
-                                            ref={nameRef}
-                                        />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>height</td>
-                                    <td>
-                                        <Form.Control
-                                            type="text"
-                                            size="sm"
-                                            ref={heightRef}
-                                        />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>weight</td>
-                                    <td>
-                                        <Form.Control
-                                            type="text"
-                                            size="sm"
-                                            ref={weightRef}
-                                        />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>birthdate</td>
-                                    <td>
-                                        <Form.Control
-                                            type="text"
-                                            size="sm"
-                                            ref={birthdateRef}
-                                        />
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </Table>
-                            <Row>
-                                <Col>
-                                    {/* handleModify 함수 연결 */}
-                                    <Button variant="info" size="lg" onClick={handleModify}>
-                                        수정완료
-                                    </Button>
-                                </Col>
-                            </Row>
-                        </div>
-                        <Modal show={show} onHide={handleClose} animation={false}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>비밀번호 수정</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <Form.Label>현재 비밀번호</Form.Label>
-                                <Form.Control type="password" size="sm" ref={pwRef} />
-                                <Form.Label>바꿀 비밀번호</Form.Label>
-                                <Form.Control type="password" size="sm" ref={pw2Ref}/>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                {/* changePWD 함수 연결 */}
-                                <Button variant="info" onClick={changePWD}>
-                                    비밀번호 수정
-                                </Button>
+                  }
+                })
+        }
 
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Close
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
-                    </div>
+    const maskPassword = (password) => {
+      return '*'.repeat(6);
+  };
+
+    return (
+<div>
+  {user?
+    (<div>
+    <h1>
+        마이페이지
+    </h1>
+        <Form>
+            <Form.Group className="mb-3">
+                <Form.Label for="userId">ID</Form.Label>
+                <Form.Control
+                    type="text"
+                    id="userId"
+                    value={user.id}
+                    disabled
+                />
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label for="userPw">비밀번호</Form.Label>
+            </Form.Group>
+            <Form.Group className="mb-3" style={{  display:"flex"  }}>
+                <input className="form-control" style={{ width:"83%"  }} value={maskPassword(pwRef)} disabled />
+                <Button style={{  width:"17%"  }}
+                    variant="light"
+                    size="sm"
+                    onClick={handleShow}
+                >
+                    비밀번호 변경
+                </Button>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label for="name">이름</Form.Label>
+                <Form.Control
+                    type="text"
+                    id="name"
+                    ref={nameRef}
+                />
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label for="height">키(cm)</Form.Label>
+                <Form.Control
+                    type="text"
+                    id="height"
+                    ref={heightRef}
+                />
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label for="weight">몸무게(kg)</Form.Label>
+                <Form.Control
+                    type="text"
+                    id="weight"
+                    ref={weightRef}
+                />
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label for="birthdate">생일</Form.Label>
+                <Form.Control
+                    type="date"
+                    id="date"
+                    ref={birthdateRef}
+                />
+            </Form.Group>
+            <div className="d-grid gap mb-3" style={{ justifyContent: 'center', marginTop: '70px' }}>
+              <Button variant="info" size="md" onClick={handleModify} style={{ border: 'none', width: '120px',textAlign: 'center' }}>
+                  수정완료  
+              </Button>
+            </div>
+        </Form>
+            <Modal show={show} onHide={handleClose} animation={false}>
+                <Modal.Header closeButton>
+                    <Modal.Title>비밀번호 수정</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form.Label>현재 비밀번호</Form.Label>
+                    <Form.Control type="password" size="sm" ref={pwRef} />
+                    <Form.Label>바꿀 비밀번호</Form.Label>
+                    <Form.Control type="password" size="sm" ref={pw2Ref}/>
+                </Modal.Body>
+                <Modal.Footer>
+                    {/* changePWD 함수 연결 */}
+                    <Button variant="info" onClick={changePWD}>
+                        비밀번호 수정
+                    </Button>
+
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+                  </div>
                 )
                 :
-                (<h1>로그인 후 이용 가능합니다.</h1>)}
+                (<div>{alert('로그인후 이용 가능합니다.')} {window.location.href = '/main'}</div>)}
         </div>
     );
 };

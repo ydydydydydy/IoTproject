@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Navbar,
   Collapse,
@@ -29,6 +29,15 @@ const Header = () => {
   const showMobilemenu = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
+
+  const navigate = useNavigate();
+  const isLoggedIn = !!sessionStorage.getItem('user');
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('user');
+    navigate('/login');
+  };
+
   return (
     <Navbar color="white" light expand="md" className="fix-header">
       <div className="d-flex align-items-center">
@@ -63,6 +72,23 @@ const Header = () => {
 
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
+        {isLoggedIn ? (
+        <>
+          {/* 로그인이 되어 있다면 */}
+          <NavItem>
+            <Link to="/mypage" className="nav-link">
+              Mypage
+            </Link>
+          </NavItem>
+          <NavItem>
+            <button onClick={handleLogout} className="nav-link">
+              Logout
+            </button>
+          </NavItem>
+        </>
+      ) : (
+        <>
+          {/* 로그인이 안 되어 있다면 */}
           <NavItem>
             <Link to="/login" className="nav-link">
               Login
@@ -73,6 +99,8 @@ const Header = () => {
               Join
             </Link>
           </NavItem>
+        </>
+      )}
           <UncontrolledDropdown inNavbar nav>
             <DropdownToggle caret nav>
               DD Menu

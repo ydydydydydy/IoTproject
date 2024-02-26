@@ -4,6 +4,13 @@ import Header from "../components/Header";
 import { Container } from "reactstrap";
 // import Body from "../components/Body";
 const FullLayout = () => {
+
+  const contentAreaStyle = {
+    flexGrow: 1,
+    maxWidth: '1300px',
+    margin: '0 auto',
+  };
+
   return (
     <main>
       {/********header**********/}
@@ -15,7 +22,7 @@ const FullLayout = () => {
           {/* <Body /> */}
         </aside>
         {/********Content Area**********/}
-        <div className="contentArea">
+        <div className="contentArea" style={contentAreaStyle}>
           {/********Middle Content**********/}
           <Container className="p-4" fluid>
             <Outlet />

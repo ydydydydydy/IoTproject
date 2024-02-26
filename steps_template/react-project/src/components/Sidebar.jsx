@@ -89,8 +89,6 @@ const Sidebar = () => {
 >
   Result
 </Link>
-
-
         </Nav>
       </div>
     </div>

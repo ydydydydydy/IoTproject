@@ -14,8 +14,8 @@ const About = () => {
           <CardTitle tag="h6" className="border-bottom p-3 mb-0">
             <i className="bi bi-bell me-2"> </i>
             {user?
-        (<h5>{user.name}님 환영합니다:)</h5>):
-        (<h5>환영합니다!</h5>)}
+              (<h5>{user.name}님 환영합니다:)</h5>):
+              (<h5>환영합니다!</h5>)}
 
           </CardTitle>
           <CardBody className="p-4">
