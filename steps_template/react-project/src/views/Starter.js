@@ -51,30 +51,51 @@ const Starter = () => {
 
       {/***Sales & Feed***/}
       <Row>
+<<<<<<< HEAD
         <Col>
           <WalkingChart />
         </Col>
         {/* <Col sm="6" lg="6" xl="5" xxl="4">
           <Feeds />
         </Col> */}
+=======
+        <Col sm="6" lg="6" xl="7" xxl="8">
+          <WalkingChart />
+        </Col>
+        <Col sm="6" lg="6" xl="5" xxl="4">
+          <Feeds />
+        </Col>
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
       </Row>
       {/***Table ***/}
       <Row>
         <Col lg="12">
+<<<<<<< HEAD
           {/* <ProjectTables /> */}
+=======
+          <ProjectTables />
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
         </Col>
       </Row>
       {/***Blog Cards***/}
       <Row>
         {BlogData.map((blg, index) => (
           <Col sm="6" lg="6" xl="3" key={index}>
+<<<<<<< HEAD
             {/* <Blog
+=======
+            <Blog
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
               image={blg.image}
               title={blg.title}
               subtitle={blg.subtitle}
               text={blg.description}
               color={blg.btnbg}
+<<<<<<< HEAD
             /> */}
+=======
+            />
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
           </Col>
         ))}
       </Row>

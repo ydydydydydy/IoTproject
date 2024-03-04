@@ -17,14 +17,22 @@ const FullLayout = () => {
       <Header/>
       <div className="pageWrapper d-lg-flex">
         {/********Sidebar**********/}
+<<<<<<< HEAD
         <aside className="sidebarArea shadow" id="sidebarArea" style={{display: "grid"}}>
+=======
+        <aside className="sidebarArea shadow" id="sidebarArea">
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
           <Sidebar />
           {/* <Body /> */}
         </aside>
         {/********Content Area**********/}
         <div className="contentArea" style={contentAreaStyle}>
           {/********Middle Content**********/}
+<<<<<<< HEAD
           <Container className="p-4" fluid style={{ height: '1500px' }}>
+=======
+          <Container className="p-4" fluid>
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
             <Outlet />
           </Container>
         </div>

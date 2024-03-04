@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import axios from '../axios'
+<<<<<<< HEAD
 import { Card, Row } from 'reactstrap';
+=======
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
 
 const Join = () => {
   // useRef 초기화
@@ -100,8 +103,6 @@ const Join = () => {
   }, [userData, passwordMatch]);
 
   return (
-    <Row>
-    <Card>
     <div>
       <h1>회원가입</h1>
       <hr />
@@ -168,8 +169,11 @@ const Join = () => {
         </div>
       </Form>
     </div>
+<<<<<<< HEAD
     </Card>
     </Row>
+=======
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
   );
 };
 

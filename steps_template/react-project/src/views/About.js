@@ -1,5 +1,6 @@
 import { Row, Col, Card, CardBody, CardTitle, Button } from "reactstrap";
 import PostureCorrectionVideo from "../components/PostureCorrectionVideo";
+<<<<<<< HEAD
 import bg1 from "../images/bg/card1.jpg";
 import bg2 from "../images/bg/card2.jpg";
 import bg3 from "../images/bg/card3.jpg";
@@ -25,9 +26,12 @@ const BlogData = [
       "허리디스크의 발병률 상승에 대응, 정확한 자세교정 및 걸음걸이 교정 서비스를 제공하여 건강한 라이프스타일을 효과적으로 유지합니다."
   }
 ];
+=======
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
 
 const About = () => {
   const user = JSON.parse(sessionStorage.getItem('user'));
+
 
 
   return (
@@ -50,6 +54,28 @@ const About = () => {
                 이 서비스는 가속도계와 자이로스코프 센서를 통합하여
                 <br/> 사용자의 자세를 실시간으로 감지하고,
                 
+  return (
+    <Row>
+      <Col>
+        {/* --------------------------------------------------------------------------------*/}
+        {/* Card-1*/}
+        {/* --------------------------------------------------------------------------------*/}
+        <Card>
+          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+            <i className="bi bi-bell me-2"> </i>
+            {user?
+              (<h5>{user.name}님 환영합니다:)</h5>):
+              (<h5>환영합니다!</h5>)}
+
+          </CardTitle>
+          <CardBody className="p-4">
+            <Row justify-content>
+              <Col lg="8">
+                <h4 className="mt-4">걸음 각속도 기반 자세교정 시스템</h4>
+                <br/>
+                <h6 className=" mb-4">
+                이 서비스는 가속도계와 자이로스코프 센서를 통합하여 사용자의 자세를 실시간으로 감지하고,
+
                 압력센서를 활용하여 힘의 균형을 측정함으로써 개인 맞춤형 자세 교정을 제공하는 헬스케어 서비스입니다.
                 </h6>
                 <br/>
@@ -58,6 +84,7 @@ const About = () => {
 
               </Col>
             </Row>
+
             <br/>
             <div className="text-center">
               <h5 className="mb-3"><strong>서비스 소개</strong></h5>
@@ -80,6 +107,5 @@ const About = () => {
     </Row>
   );
 };
-
 
 export default About;

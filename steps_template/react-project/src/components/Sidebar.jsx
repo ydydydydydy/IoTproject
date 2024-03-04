@@ -17,11 +17,14 @@ const navigation = [
     href: "/survey",
     icon: "bi bi-patch-check",
   },
+<<<<<<< HEAD
   {
     title: "Heatmap",
     href: "/heatmap",
     icon: "bi bi-patch-check",
   }
+=======
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
   // {
   //   title: "Cards",
   //   href: "/cards",
@@ -88,11 +91,19 @@ const Sidebar = () => {
               </Link>
             </NavItem>
           ))}
+
               <Link
                   to="/result"
                   className="btn btn-danger mt-3">
                   Result
               </Link>
+
+<Link
+  to="/result"
+  className="btn btn-danger mt-3"
+>
+  Result
+</Link>
         </Nav>
       </div>
     </div>

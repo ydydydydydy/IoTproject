@@ -7,6 +7,11 @@ import {
   NavItem,
   NavbarBrand,
 
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Dropdown,
   Button,
 } from "reactstrap";
 import Logo from "./Logo";
@@ -98,6 +103,17 @@ const Header = () => {
         </>
       )}
 
+          <UncontrolledDropdown inNavbar nav>
+            <DropdownToggle caret nav>
+              DD Menu
+            </DropdownToggle>
+            <DropdownMenu end>
+              <DropdownItem>Option 1</DropdownItem>
+              <DropdownItem>Option 2</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>Reset</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
         </Nav>
         {/* <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color="transparent">

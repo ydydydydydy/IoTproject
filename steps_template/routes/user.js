@@ -150,6 +150,7 @@ router.post('/delete', (req, res) => {
 });
 
 // 보행 정보 라우터
+<<<<<<< HEAD
 // router.post('/result', (req,res)=>{
 
 //     const {id} = req.body;
@@ -217,6 +218,28 @@ function queryDatabase(sql, params) {
   });
 }
 
+=======
+router.post('/result', (req,res)=>{
+
+    const {id} = req.body;
+    console.log(id);
+
+    const walkingInfo = 'select user_id, steps, distance, angle from walking where user_id = ?';
+    conn.query(walkingInfo, [id], (err, rows) => {
+
+        if(rows && rows.length > 0){ // rows가 null이 아니고 하나 이상의 행이 반환되어야 함
+            console.log('보행정보 확인 완료');
+            res.json({result:'success', walkingData: rows});
+            console.log(rows);
+            // 보행 정보를 응답에 포함하여 클라이언트에게 전달
+        }else{
+            console.log('보행정보 확인 실패');
+            res.json({result:'fail'}); // 실패 시에도 응답을 보내야 함
+        }
+    })
+});
+
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
 
 // 회원 검색 라우터
 router.post('/select', (req,res)=>{
@@ -237,4 +260,8 @@ router.post('/video', (req,res)=>{
     console.log('영상 페이지 진입 완료', req.body);
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e

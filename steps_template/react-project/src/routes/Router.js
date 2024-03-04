@@ -14,7 +14,11 @@ const MyPage = lazy(() => import("../components/MyPage.jsx"));
 const Delete = lazy(() => import("../components/Delete.jsx"));
 const Survey = lazy(() => import("../components/Survey.jsx"));
 const Result = lazy(() => import("../components/Result.jsx"));
+<<<<<<< HEAD
 const HeatMap = lazy(() => import("../components/HeatMap.js"));
+=======
+
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
 // const About = lazy(() => import("../views/About.js"));
 // const Alerts = lazy(() => import("../views/ui/Alerts"));
 // const Badges = lazy(() => import("../views/ui/Badges"));
@@ -41,7 +45,10 @@ const ThemeRoutes = [
       { path: "/delete", exact: true, element: <Delete /> },
       { path: "/survey", exact: true, element: <Survey /> },
       { path: "/result", exact: true, element: <Result /> },
+
       { path: "/heatmap", exact: true, element: <HeatMap /> }
+
+
       // { path: "/about", exact: true, element: <About /> },
       // { path: "/alerts", exact: true, element: <Alerts /> },
       // { path: "/badges", exact: true, element: <Badges /> },

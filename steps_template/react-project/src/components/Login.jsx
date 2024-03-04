@@ -2,7 +2,10 @@ import React, { useRef } from 'react'
 import {Form, Button} from 'react-bootstrap';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+<<<<<<< HEAD
 import { Card, Row } from 'reactstrap';
+=======
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
 
 
 /*
@@ -69,10 +72,13 @@ const Login = () => {
   }
   
   return (
+<<<<<<< HEAD
     <Row>
       <Card>
 
       
+=======
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
     <div>
     <h1>로그인</h1>
       <Form onSubmit={handleLogin}>

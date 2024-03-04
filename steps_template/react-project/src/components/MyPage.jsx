@@ -85,6 +85,7 @@ const MyPage = () => {
                     alert('회원정보 변경 완료!');
 
                     navigate('/main');
+<<<<<<< HEAD
                   }
                 })
         }
@@ -186,6 +187,117 @@ const MyPage = () => {
                 )
                 :
                 (<div>{alert('로그인후 이용 가능합니다.')} {window.location.href = '/main'}</div>)}
+=======
+                }
+            })
+    }
+    return (
+        <div className="main-body">
+            {/* 로그인된 상태인지 판별
+        - 로그인 상태: 회원정보 출력
+        - 비로그인 상태: '로그인 후 이용가능합니다.' 출력
+      */}
+            {user?
+                (<div>
+                        <h1>마이페이지</h1>
+                        <div align="center">
+                            <Table striped="columns">
+                                <tbody align="center">
+                                <tr>
+                                    <td>ID</td>
+                                    <td>{user.id}</td>
+                                </tr>
+                                <tr>
+                                    <td>비밀번호</td>
+                                    <td>
+                                        <div className="d-grid gap-2">
+                                            <Button
+                                                variant="light"
+                                                size="sm"
+                                                onClick={handleShow}
+                                            >
+                                                비밀번호 변경
+                                            </Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>이름</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            size="sm"
+                                            ref={nameRef}
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>height</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            size="sm"
+                                            ref={heightRef}
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>weight</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            size="sm"
+                                            ref={weightRef}
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>birthdate</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            size="sm"
+                                            ref={birthdateRef}
+                                        />
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </Table>
+                            <Row>
+                                <Col>
+                                    {/* handleModify 함수 연결 */}
+                                    <Button variant="info" size="lg" onClick={handleModify}>
+                                        수정완료
+                                    </Button>
+                                </Col>
+                            </Row>
+                        </div>
+                        <Modal show={show} onHide={handleClose} animation={false}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>비밀번호 수정</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <Form.Label>현재 비밀번호</Form.Label>
+                                <Form.Control type="password" size="sm" ref={pwRef} />
+                                <Form.Label>바꿀 비밀번호</Form.Label>
+                                <Form.Control type="password" size="sm" ref={pw2Ref}/>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                {/* changePWD 함수 연결 */}
+                                <Button variant="info" onClick={changePWD}>
+                                    비밀번호 수정
+                                </Button>
+
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                    </div>
+                )
+                :
+                (<h1>로그인 후 이용 가능합니다.</h1>)}
+>>>>>>> 583a2cc2b26b84055c13fb4d0d16694bbfcb2e2e
         </div>
     );
 };
